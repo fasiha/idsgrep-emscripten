@@ -36,6 +36,8 @@ $ emcc -O0  idsgrep.bc -o index.html --preload-file dict/cjkvi-j.eids --preload-
 
 Browse it now at http://fasiha.github.io/idsgrep-emscripten/! It's not super-exciting because it runs the equivalent of `idsgrep 高 dict/edict.eids`, that is, just a lookup, no matching, to print a single character's EIDS component breakdown and dictionary definition.
 
+The HTML currently deployed has [small but crucial differences](https://github.com/fasiha/idsgrep-emscripten/blob/gh-pages/index.html#L1221-L1223) from the output of the above commands. Specifically, the Javascript memory ceiling is raised (due to the size of the dictionaries), and the command-line arguments are specified.
+
 (Note I've included the KanjiVG and Edict2 databases with this repository, so you can start having some immediate CJK fun. See the IDSgrep documentation or your search engine for sources.)
 
 If you want to run IDSgrep in node, build it as such and run it as follows:
