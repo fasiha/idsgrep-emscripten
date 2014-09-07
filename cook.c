@@ -25,6 +25,8 @@
 
 #include "idsgrep.h"
 
+int idsgrep_utf8cw(char *);
+
 int cook_output=0;
 int colourize_output=0;
 int canonicalize_input=1;
