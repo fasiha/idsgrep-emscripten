@@ -11,8 +11,14 @@ This means that a useful C program now runs in your browser's Javascript engine,
 
 Geek's note: more specifically, the C code was compiled to LLVM intermediate representation (IR) by Clang, the C compiler, which Emscripten then compiled to Javascript.
 
-Instructions
-------------
+Instructions for use
+--------------------
+Browse it now at http://fasiha.github.io/idsgrep-emscripten/! Run your Han character queries against the CVKVI, Edict2 (using CJKVI decompositions), and KanjiVG databases!
+
+For information on what kind of queries can be run, see the [IDSgrep manual](http://tsukurimashou.sourceforge.jp/idsgrep.pdf), as well as the sample queries that are run when you first load the page. More tutorial material will soon be added.
+
+Instructions for building
+-------------------------
 After setting up Emscripten, I run the `configure` script using Emscripten's `emconfigure` wrapper:
 ```
 $ emconfigure ./configure --disable-docs --enable-edict-decomp=cjkvi-j --disable-colour-build --disable-silent-rules
@@ -33,11 +39,11 @@ Rename the LLVM intermediate representation (IR) bitcode to have .bc extension s
 $ cp idsgrep idsgrep.bc 
 $ emcc -O0  idsgrep.bc -o index.html --preload-file dict/cjkvi-j.eids --preload-file dict/cjkvi-j.bvec --preload-file dict/edict.bvec --preload-file dict/edict.eids  --preload-file dict/kanjivg.bvec  --preload-file dict/kanjivg.eids -s EXPORTED_FUNCTIONS="['_core_process', '_core_init', '_core_test', '_core_cook', '_set_output_recipe']" -s MEMFS_APPEND_TO_TYPED_ARRAYS=1
 ```
+The output is hosted at http://fasiha.github.io/idsgrep-emscripten/.
 
-Browse it now at http://fasiha.github.io/idsgrep-emscripten/! Run your Han character queries against the CVKVI, Edict2 (using CJKVI decompositions), and KanjiVG databases!
 
 Caveats
 -------
-- It's unclear to be my mnemonics like "[lr]" and "(anything)" mentioned in the [IDSgrep manual](http://tsukurimashou.sourceforge.jp/idsgrep.pdf), pages 19--20. I think this has something to do with the cooking process. This is a work-in-progress.
+- It's unclear why mnemonics like "[lr]" and "(anything)" mentioned in the [IDSgrep manual](http://tsukurimashou.sourceforge.jp/idsgrep.pdf), pages 19--20. I think this has something to do with the cooking process. This is a work-in-progress.
 
 
