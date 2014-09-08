@@ -118,6 +118,16 @@
     <div id="welcome">
       <p>
       <strong>Welcome to IDSgrep on the Web.</strong> Please wait for dictionaries to initialize, and for some example patterns to be run.
+    </div>
+
+    <div id="inputs">
+      <p><strong>Search</strong> for <input type="text" id="input-pattern" size="20"> in dictionary
+      <select id="select-dictionary">
+        <option value="cjkvi-j">CJKVI</option>
+        <option value="edict">Edict2 (uses CJKVI decomposition)</option>
+        <option value="kanjivg">KanjiVG</option>
+      </select>
+      <button id="input-pattern-submit">Submit</button>
 
       <p>
       Currently known problems:
@@ -129,15 +139,7 @@
       Please report other issues at <a href="https://github.com/fasiha/idsgrep-emscripten/issues">GitHub Issues</a>.
       </li>
       </ul>
-    </div>
-    <div id="inputs">
-      <p><strong>Search</strong> for <input type="text" id="input-pattern" size="20"> in dictionary
-      <select id="select-dictionary">
-        <option value="cjkvi-j">CJKVI</option>
-        <option value="edict">Edict2 (uses CJKVI decomposition)</option>
-        <option value="kanjivg">KanjiVG</option>
-      </select>
-      <button id="input-pattern-submit">Submit</button>
+      <hr width="75%">
     </div>
 
     <div id="em-output"></div>
