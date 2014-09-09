@@ -104,6 +104,13 @@
       .pattern-matches {
         margin-left: 2em;
       }
+      div#em-output p {
+        white-space: pre;
+      }
+      body {
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+      }
 
     </style>
     <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.js" charset="utf-8"></script>
@@ -121,10 +128,9 @@
     </div>
 
     <div id="inputs">
-      <p><strong>Search</strong> for <input type="text" id="input-pattern" size="20"> in dictionary
+      <p><strong>Query</strong> <input type="text" id="input-pattern" size="20"> with dictionary
       <select id="select-dictionary">
         <option value="cjkvi-j">CJKVI</option>
-        <option value="edict">Edict2 (uses CJKVI decomposition)</option>
         <option value="kanjivg">KanjiVG</option>
       </select>
       <button id="input-pattern-submit">Submit</button>
